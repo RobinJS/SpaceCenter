@@ -1,4 +1,17 @@
 body {
-  background-color: #2b3646;
+  background-color: #181c28;
   color: white;
+}
+
+header {
+  background-color: #292d39;
+}
+
+section {
+  background-color: #292d39;
+  color: white;
+}
+
+.section-header {
+  border-bottom: 1px solid gray;
 }

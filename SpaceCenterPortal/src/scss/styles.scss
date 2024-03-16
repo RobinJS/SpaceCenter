@@ -1,4 +1,19 @@
+$section-bg: #292d39;
+
 body {
-    background-color: rgb(0, 35, 68);
+    background-color: #181c28;
     color: white;
+}
+
+header {
+    background-color: $section-bg;
+}
+
+section {
+    background-color: $section-bg;
+    color: white;
+}
+
+.section-header {
+    border-bottom: 1px solid gray;
 }
