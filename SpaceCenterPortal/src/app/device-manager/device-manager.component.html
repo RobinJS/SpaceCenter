@@ -1,0 +1,39 @@
+<!-- <div class="d-flex top-0"> -->
+    <section class="bg-dark text-white col-md-8 mx-auto">
+        <div class="section-header p-3">
+            <span class="col fs-5 me-auto">Devices</span>
+            <button class="btn btn-outline-primary px-3 py-1 w-auto col-1 float-end" type="button">Add</button>
+        </div>
+        <div class="h-auto">
+            <ul class="list-group">
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="../assets/images/icons/icons8-space-rover-48.png" alt="rover" width="32" height="32" class="rounded-circle flex-shrink-0">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                        <h6 class="mb-0">Curiosity</h6>
+                        <p class="mb-0 opacity-75">Rover</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+                    <img src="../assets/images/icons/icons8-space-rover-48.png" alt="rover" width="32" height="32" class="rounded-circle flex-shrink-0">
+                    <div class="d-flex gap-2 w-100 justify-content-between">
+                        <div>
+                        <h6 class="mb-0">Curiosity-2</h6>
+                        <p class="mb-0 opacity-75">Rover</p>
+                        </div>
+                    </div>
+                </a>
+                <p class="text-dark p-1" *ngIf="devices.length == 0">No devices</p>
+            </ul>
+        </div>
+    </section>
+
+<!-- </div> -->
+
+<hr>
+<div class="bg-light text-center fw-bold text-dark border-bottom d-none d-sm-block d-md-none">sm</div>
+<div class="bg-light text-center fw-bold text-dark border-bottom d-none d-md-block d-lg-none">md</div>
+<div class="bg-light text-center fw-bold text-dark border-bottom d-none d-lg-block d-xl-none">lg</div>
+<div class="bg-light text-center fw-bold text-dark border-bottom d-none d-xl-block d-xxl-none">xl</div>
+<div class="bg-light text-center fw-bold text-dark border-bottom d-none d-xxl-block">xxl</div>
