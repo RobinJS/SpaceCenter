@@ -5,6 +5,7 @@ import { DeviceManagerComponent } from '../device-manager/device-manager.compone
 
 const routes: Routes = [
     { path: '', redirectTo: '/devices', pathMatch: 'full' },
+    { path: '#', redirectTo: '', pathMatch: 'full' },
     { path: 'devices', component:DeviceManagerComponent },
 ];
 

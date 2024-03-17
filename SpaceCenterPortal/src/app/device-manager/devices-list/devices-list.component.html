@@ -1,0 +1,13 @@
+<section class="text-white col-md-8 mx-auto shadow">
+    <div class="section-header p-3">
+        <span class="fs-5">Devices</span>
+        <button class="btn btn-outline-primary px-3 py-1 w-auto float-end" type="button">Add</button>
+    </div>
+    <div class="h-auto">
+        <ul class="list-group">
+            <app-devices-component
+                *ngFor="let deviceEl of devices" [device]="deviceEl"></app-devices-component>
+            <p class="text-light p-1" *ngIf="devices.length == 0">No devices</p>
+        </ul>
+    </div>
+</section>
