@@ -1,12 +1,16 @@
-$section-bg: #292d39;
+// $section-bg: #292d39;
+$section-bg: #202b39;
 
 body {
-    background-color: #181c28;
+    background-color: #344455;
+    // background-color: #181c28;
+    // background: rgb(49,94,158);
     color: white;
 }
 
 header {
-    background-color: $section-bg;
+    // background-color: $section-bg;
+    background-color: #202b39;
 }
 
 section {
