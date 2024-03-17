@@ -6,8 +6,8 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DeviceManagerComponent } from './device-manager/device-manager.component';
 import { RoutingModule } from './routing/routing.module';
-import { DevicesListComponent } from './device-manager/devices-list/devices-list.component';
-import { DevicesComponentComponent } from './device-manager/devices-list/devices-component/devices-component.component';
+import { DeviceListComponent } from './device-manager/device-list/device-list.component';
+import { DeviceItemComponent } from './device-manager/device-list/device-item/device-item.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +15,8 @@ import { DevicesComponentComponent } from './device-manager/devices-list/devices
     HeaderComponent,
     FooterComponent,
     DeviceManagerComponent,
-    DevicesListComponent,
-    DevicesComponentComponent
+    DeviceListComponent,
+    DeviceItemComponent,
   ],
   imports: [
     BrowserModule,
