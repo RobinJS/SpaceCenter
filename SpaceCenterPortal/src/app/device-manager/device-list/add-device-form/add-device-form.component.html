@@ -1,0 +1,29 @@
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" data-bs-theme="dark">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Add device</h1>
+                <button type="button" class="btn-close text-white " data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="form-device-name">
+                    <label for="form-device-name">Device Name</label>
+                    <p class="form-floating text-warning">Device name cannot be changed later</p>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="form-device-type" aria-label="Select device type">
+                      <option value="rover">Rover</option>
+                      <option value="satelite" class="text-danger" disabled >Satelite</option>
+                      <option value="telescope" class="text-danger" disabled >Telescope</option>
+                    </select>
+                    <label for="form-device-type">Device Type</label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

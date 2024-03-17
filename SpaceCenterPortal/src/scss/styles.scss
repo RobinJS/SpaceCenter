@@ -9,8 +9,7 @@ body {
 }
 
 header {
-    // background-color: $section-bg;
-    background-color: #202b39;
+    background-color: $section-bg;
 }
 
 section {
@@ -20,4 +19,9 @@ section {
 
 .section-header {
     border-bottom: 1px solid gray;
+}
+
+.modal-content {
+    background-color: $section-bg;
+    color: white;
 }

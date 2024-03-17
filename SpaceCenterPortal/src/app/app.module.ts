@@ -8,6 +8,7 @@ import { DeviceManagerComponent } from './device-manager/device-manager.componen
 import { RoutingModule } from './routing/routing.module';
 import { DeviceListComponent } from './device-manager/device-list/device-list.component';
 import { DeviceItemComponent } from './device-manager/device-list/device-item/device-item.component';
+import { AddDeviceFormComponent } from './device-manager/device-list/add-device-form/add-device-form.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DeviceItemComponent } from './device-manager/device-list/device-item/de
     DeviceManagerComponent,
     DeviceListComponent,
     DeviceItemComponent,
+    AddDeviceFormComponent,
   ],
   imports: [
     BrowserModule,

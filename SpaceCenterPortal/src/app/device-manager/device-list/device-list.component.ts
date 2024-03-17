@@ -9,14 +9,14 @@ import { Rover } from '../../models/devices/Rover';
 })
 export class DeviceListComponent {
     devices: Device[] = [
-        new Rover("Curiosity", DeviceType.Rover, []),
-        new Rover("Curiosity", DeviceType.Rover, []),
-        new Rover("Curiosity", DeviceType.Rover, []),
-        new Rover("Curiosity", DeviceType.Rover, []),
-        new Rover("Curiosity", DeviceType.Rover, [])
+        // new Rover("Curiosity", DeviceType.Rover, []),
+        // new Rover("Curiosity", DeviceType.Rover, []),
+        // new Rover("Curiosity", DeviceType.Rover, []),
+        // new Rover("Curiosity", DeviceType.Rover, []),
+        // new Rover("Curiosity", DeviceType.Rover, [])
     ];
     
     onAddDevice() {
-        throw new Error('Method not implemented.');
+        // throw new Error('Method not implemented.');
     }
 }

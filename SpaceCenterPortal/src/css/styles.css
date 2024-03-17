@@ -15,3 +15,8 @@ section {
 .section-header {
   border-bottom: 1px solid gray;
 }
+
+.modal-content {
+  background-color: #202b39;
+  color: white;
+}
