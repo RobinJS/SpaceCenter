@@ -6,3 +6,6 @@ It's a work in progress. It is intended to be made of two parts: front-end and b
 
 ## Developed with
 Typescript, Angular, Bootstrap and Sass.
+
+## How to run
+For now only the front-end can be launched. See inside SpaceCenterPortal folder for more info.
