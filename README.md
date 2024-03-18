@@ -4,5 +4,5 @@ This is a simulator of a space agency for sending/receiving data and controlling
 ## About
 It's a work in progress. It is intended to be made of two parts: front-end and back-end.
 
-## Used technologies:
-Developed with Typescript, Angular, Bootstrap nad Sass.
+## Developed with
+Typescript, Angular, Bootstrap and Sass.
