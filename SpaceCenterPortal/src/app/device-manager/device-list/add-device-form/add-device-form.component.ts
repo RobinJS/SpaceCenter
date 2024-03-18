@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'add-device-form',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './add-device-form.component.css'
 })
 export class AddDeviceFormComponent {
-
+    
+    onAddDevice() {
+        let name: string;
+        let type: string;
+        console.log(1);
+    }
 }

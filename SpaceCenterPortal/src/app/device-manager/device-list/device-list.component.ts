@@ -15,8 +15,4 @@ export class DeviceListComponent {
         // new Rover("Curiosity", DeviceType.Rover, []),
         // new Rover("Curiosity", DeviceType.Rover, [])
     ];
-    
-    onAddDevice() {
-        // throw new Error('Method not implemented.');
-    }
 }
