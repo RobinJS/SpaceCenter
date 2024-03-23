@@ -7,23 +7,23 @@
             </div>
             <div class="modal-body">
 
-                <form >
+                <form (ngSubmit)="onAddDevice()" #f="ngForm">
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="form-device-name">
-                        <label for="form-device-name">Device Name</label>
+                        <input type="text" class="form-control" id="formDeviceName" name="formDeviceName" ngModel>
+                        <label for="formDeviceName">Device Name</label>
                         <p class="form-floating text-warning">Device name cannot be changed later</p>
                     </div>
                     <div class="form-floating">
-                        <select class="form-select" id="form-device-type" aria-label="Select device type">
-                          <option value="rover">Rover</option>
-                          <option value="satelite" class="text-danger" disabled >Satelite</option>
-                          <option value="telescope" class="text-danger" disabled >Telescope</option>
+                        <select class="form-select" id="formDeviceType" name="formDeviceType" aria-label="Select device type" ngModel>
+                          <option value="Rover">Rover</option>
+                          <option value="Satelite" class="text-danger" disabled >Satelite</option>
+                          <option value="Telescope" class="text-danger" disabled >Telescope</option>
                         </select>
-                        <label for="form-device-type">Device Type</label>
+                        <label for="formDeviceType">Device Type</label>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Add</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add</button>
                     </div>
                 </form>
 

@@ -9,6 +9,7 @@ import { RoutingModule } from './routing/routing.module';
 import { DeviceListComponent } from './device-manager/device-list/device-list.component';
 import { DeviceItemComponent } from './device-manager/device-list/device-item/device-item.component';
 import { AddDeviceFormComponent } from './device-manager/device-list/add-device-form/add-device-form.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AddDeviceFormComponent } from './device-manager/device-list/add-device-
   ],
   imports: [
     BrowserModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

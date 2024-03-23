@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Device, DeviceType } from '../../models/devices/Device';
 import { Rover } from '../../models/devices/Rover';
+import { DeviceListService } from './device-list.service';
 
 @Component({
   selector: 'app-device-list',
   templateUrl: './device-list.component.html',
   styleUrl: './device-list.component.css'
 })
-export class DeviceListComponent {
+export class DeviceListComponent implements OnInit {
     devices: Device[] = [
         // new Rover("Curiosity", DeviceType.Rover, []),
         // new Rover("Curiosity", DeviceType.Rover, []),
@@ -15,4 +16,17 @@ export class DeviceListComponent {
         // new Rover("Curiosity", DeviceType.Rover, []),
         // new Rover("Curiosity", DeviceType.Rover, [])
     ];
+
+    constructor(private deviceListService: DeviceListService) {}
+
+    ngOnInit() {
+        this.deviceListService.deviceAdded.subscribe((device: Device) => {
+            this.devices.push(device);
+        });
+
+        this.deviceListService.deviceDeleted.subscribe((device: Device) => {
+            const index = this.devices.indexOf(device);
+            if (index != -1) this.devices.splice(index, 1);
+        });
+    }
 }

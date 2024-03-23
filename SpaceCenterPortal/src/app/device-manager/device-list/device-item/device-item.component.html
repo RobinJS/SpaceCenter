@@ -1,4 +1,4 @@
-<a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="false">
+<li class="list-group-item list-group-item-action d-flex gap-3 py-3 user-select-none " role="button" aria-current="false">
     <img src="../assets/images/icons/icons8-space-rover-48.png" alt="{{ device.type }}" width="32" height="32" class="my-auto">
     <div class="d-flex gap-2 w-100 justify-content-between">
         <div>
@@ -6,6 +6,6 @@
         <p class="mb-0 opacity-75">{{ device.type }}</p>
         </div>
     </div>
-    <span class="badge text-bg-success my-auto ">Operational</span>
-    <button class="btn btn-danger btn-sm my-auto ">Delete</button>
-</a>
+    <span class="badge text-bg-success my-auto">Operational</span>
+    <button class="btn btn-danger btn-sm my-auto" (click)="onDelete()">Delete</button>
+</li>
