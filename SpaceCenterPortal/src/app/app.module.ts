@@ -10,6 +10,7 @@ import { DeviceListComponent } from './device-manager/device-list/device-list.co
 import { DeviceItemComponent } from './device-manager/device-list/device-item/device-item.component';
 import { AddDeviceFormComponent } from './device-manager/device-list/add-device-form/add-device-form.component';
 import { FormsModule } from '@angular/forms';
+import { RemoveDevicePromptComponent } from './device-manager/device-list/remove-device-prompt/remove-device-prompt.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { FormsModule } from '@angular/forms';
     DeviceListComponent,
     DeviceItemComponent,
     AddDeviceFormComponent,
+    RemoveDevicePromptComponent,
   ],
   imports: [
     BrowserModule,

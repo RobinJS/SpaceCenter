@@ -10,8 +10,8 @@ import { DeviceListService } from './device-list.service';
 })
 export class DeviceListComponent implements OnInit {
     devices: Device[] = [
-        // new Rover("Curiosity", DeviceType.Rover, []),
-        // new Rover("Curiosity", DeviceType.Rover, []),
+        new Rover("Curiosity", DeviceType.Rover, []),
+        new Rover("Sat TV", DeviceType.Satellite, []),
         // new Rover("Curiosity", DeviceType.Rover, []),
         // new Rover("Curiosity", DeviceType.Rover, []),
         // new Rover("Curiosity", DeviceType.Rover, [])
@@ -24,9 +24,13 @@ export class DeviceListComponent implements OnInit {
             this.devices.push(device);
         });
 
-        this.deviceListService.deviceDeleted.subscribe((device: Device) => {
+        this.deviceListService.deviceRemoved.subscribe((device: Device) => {
             const index = this.devices.indexOf(device);
             if (index != -1) this.devices.splice(index, 1);
+        });
+
+        this.deviceListService.onDeletePrompt.subscribe(() => {
+            
         });
     }
 }

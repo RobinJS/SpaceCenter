@@ -1,0 +1,17 @@
+<div class="modal fade" id="removeDevicePrompt" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="removeDevicePromptLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" data-bs-theme="dark">
+                <h1 class="modal-title fs-5" id="removeDevicePromptLabel">Remove device</h1>
+                <button type="button" class="btn-close text-white " data-bs-dismiss="modal" aria-label="Close" (click)="onCancelDeviceRemoval()"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to disconnect and remove this device?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="onCancelDeviceRemoval()">Cancel</button>
+                <button type="button" class="btn btn-warning" data-bs-dismiss="modal" (click)="onRemoveDevice()">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

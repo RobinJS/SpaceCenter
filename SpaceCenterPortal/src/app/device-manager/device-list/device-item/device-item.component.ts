@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Device } from '../../../models/devices/Device';
+import { Component, Input, OnInit } from '@angular/core';
+import { Device, DeviceType } from '../../../models/devices/Device';
 import { DeviceListService } from '../device-list.service';
 
 @Component({
@@ -7,12 +7,20 @@ import { DeviceListService } from '../device-list.service';
   templateUrl: './device-item.component.html',
   styleUrl: './device-item.component.css'
 })
-export class DeviceItemComponent {
+export class DeviceItemComponent implements OnInit {
     @Input() device: Device;
+    iconPath: string = "../assets/images/icons/";
 
     constructor(private deviceListService: DeviceListService) {}
 
-    onDelete() {
-        this.deviceListService.delete(this.device);
+    ngOnInit() {
+        switch (this.device.type) {
+            case DeviceType.Rover: this.iconPath += "icons8-space-rover-48.png"; break;
+            case DeviceType.Satellite: this.iconPath += "icons8-satelite-99.png"; break;
+        }
+    }
+
+    onRemoveDeviceBtn() {
+        this.deviceListService.beforeRemove(this.device);
     }
 }

@@ -3,7 +3,7 @@ import { Instrument } from "../instruments/Instrument";
 
 export class Device implements IDevice {
     name: string;
-    type: string;
+    type: DeviceType;
     _instruments: Instrument[];
     private connected: boolean = false;
 
@@ -11,7 +11,7 @@ export class Device implements IDevice {
         return this.connected ? this._instruments : null;
     }
 
-    constructor(name: string, type: string, instruments: Instrument[]) {
+    constructor(name: string, type: DeviceType, instruments: Instrument[]) {
         this.name = name;
         this.type = type;
         this._instruments = instruments;
@@ -27,5 +27,6 @@ export class Device implements IDevice {
 }
 
 export enum DeviceType {
-    Rover = "Rover"
+    Rover = "Rover",
+    Satellite = "Satellite"
 }

@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { DeviceListService } from '../device-list.service';
-import { Device } from '../../../models/devices/Device';
 
 @Component({
   selector: 'add-device-form',
@@ -14,11 +13,13 @@ export class AddDeviceFormComponent {
     constructor(private deviceListService: DeviceListService) {}
 
     onAddDevice() {
-        const device = new Device(
+        this.deviceListService.addDevice(
             this.addDeviceForm.value.formDeviceName, 
-            this.addDeviceForm.value.formDeviceType, null
+            this.addDeviceForm.value.formDeviceType
         );
-        this.deviceListService.addDevice(device);
+
         this.addDeviceForm.reset();
     }
+
+    
 }

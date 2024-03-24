@@ -1,5 +1,5 @@
 <li class="list-group-item list-group-item-action d-flex gap-3 py-3 user-select-none " role="button" aria-current="false">
-    <img src="../assets/images/icons/icons8-space-rover-48.png" alt="{{ device.type }}" width="32" height="32" class="my-auto">
+    <img src="{{iconPath}}" alt="{{ device.type }}" width="32" height="32" class="my-auto">
     <div class="d-flex gap-2 w-100 justify-content-between">
         <div>
         <h6 class="mb-0">{{ device.name }}</h6>
@@ -7,5 +7,5 @@
         </div>
     </div>
     <span class="badge text-bg-success my-auto">Operational</span>
-    <button class="btn btn-danger btn-sm my-auto" (click)="onDelete()">Delete</button>
+    <button class="btn btn-danger btn-sm my-auto" data-bs-toggle="modal" data-bs-target="#removeDevicePrompt" (click)="onRemoveDeviceBtn()">Remove</button>
 </li>
