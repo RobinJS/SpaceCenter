@@ -9,9 +9,8 @@ const routes: Routes = [
     { path: '', redirectTo: '/devices', pathMatch: 'full' },
     { path: '#', redirectTo: '', pathMatch: 'full' },
     { path: 'devices', component:DeviceManagerComponent },
-    { path: 'rover-controls/:id/:name', component:RoverControlComponent },
-    // { path: 'rover-controls', component:RoverControlComponent },
-    { path: 'satellite-controls/:id/:name', component:SatelliteControlComponent },
+    { path: 'rover-controls', component:RoverControlComponent },
+    { path: 'satellite-controls', component:SatelliteControlComponent },
 ];
 
 @NgModule({

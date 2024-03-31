@@ -10,15 +10,11 @@ import { DeviceListService } from '../../device-manager/device-list/device-list.
   styleUrl: './rover-control.component.css'
 })
 export class RoverControlComponent implements OnInit {
-    id: number;
-    name: string;
     device: Rover;
 
     constructor(private route: ActivatedRoute, private deviceListService: DeviceListService) {}
 
     ngOnInit() {
-        // this.id = this.route.snapshot.params['id'];
-        // this.name = this.route.snapshot.params['name'];
         this.device = this.deviceListService.getSelectedDevice();
     }
 

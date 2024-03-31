@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { RemoveDevicePromptComponent } from './device-manager/device-list/remove-device-prompt/remove-device-prompt.component';
 import { RoverControlComponent } from './controls/rover-control/rover-control.component';
 import { SatelliteControlComponent } from './controls/satellite-control/satellite-control.component';
+import { DeviceConnectingComponent } from './device-manager/device-list/device-connecting/device-connecting.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SatelliteControlComponent } from './controls/satellite-control/satellit
     RemoveDevicePromptComponent,
     RoverControlComponent,
     SatelliteControlComponent,
+    DeviceConnectingComponent,
   ],
   imports: [
     BrowserModule,

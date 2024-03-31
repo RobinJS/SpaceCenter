@@ -25,8 +25,11 @@ export class DeviceItemComponent implements OnInit {
     }
 
     getPath(): string {
-        // return "/" + this.device.type.toLowerCase() + "-controls/";
-        return `/${this.device.type.toLowerCase()}-controls/${this.device.id}/${this.device.name}`;
+        return `/${this.device.type.toLowerCase()}-controls`;
+    }
+
+    getIdWithName(): string {
+        return `${this.device.id}-${this.device.name}`;
     }
 
     onDeviceClick() {

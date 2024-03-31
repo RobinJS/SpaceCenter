@@ -1,5 +1,6 @@
 <add-device-form></add-device-form>
 <app-remove-device-prompt></app-remove-device-prompt>
+<app-device-connecting></app-device-connecting>
 <section class="text-white col-md-8 mx-auto shadow">
     <div class="section-header p-3">
         <span class="fs-5">Devices</span>
@@ -9,8 +10,12 @@
     </div>
     <div class="h-auto">
         <ul class="list-group">
-            <app-device-item *ngFor="let deviceEl of devices" [device]="deviceEl"></app-device-item>
+            <app-device-item 
+                *ngFor="let deviceEl of devices" [device]="deviceEl">
+            </app-device-item>
             <p class="text-light p-1" *ngIf="devices.length == 0">No devices</p>
         </ul>
     </div>
 </section>
+
+<!-- data-bs-toggle="modal" data-bs-target="#deviceConnnecting" type="button" -->
