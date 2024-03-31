@@ -9,8 +9,7 @@
     </div>
     <div class="h-auto">
         <ul class="list-group">
-            <app-device-item
-                *ngFor="let deviceEl of devices" [device]="deviceEl"></app-device-item>
+            <app-device-item *ngFor="let deviceEl of devices" [device]="deviceEl"></app-device-item>
             <p class="text-light p-1" *ngIf="devices.length == 0">No devices</p>
         </ul>
     </div>

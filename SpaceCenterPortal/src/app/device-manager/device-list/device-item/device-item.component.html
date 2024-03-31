@@ -1,4 +1,5 @@
-<li class="list-group-item list-group-item-action d-flex gap-3 py-3 user-select-none " role="button" aria-current="false">
+<li class="list-group-item list-group-item-action d-flex gap-3 py-3 user-select-none " 
+    role="button" aria-current="false" routerLink="{{getPath()}}" (click)="onDeviceClick()">
     <img src="{{iconPath}}" alt="{{ device.type }}" width="32" height="32" class="my-auto">
     <div class="d-flex gap-2 w-100 justify-content-between">
         <div>

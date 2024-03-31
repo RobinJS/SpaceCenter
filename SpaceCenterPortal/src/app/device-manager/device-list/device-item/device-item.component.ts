@@ -23,4 +23,13 @@ export class DeviceItemComponent implements OnInit {
     onRemoveDeviceBtn() {
         this.deviceListService.beforeRemove(this.device);
     }
+
+    getPath(): string {
+        // return "/" + this.device.type.toLowerCase() + "-controls/";
+        return `/${this.device.type.toLowerCase()}-controls/${this.device.id}/${this.device.name}`;
+    }
+
+    onDeviceClick() {
+        this.deviceListService.setSelectedDevice(this.device);
+    }
 }

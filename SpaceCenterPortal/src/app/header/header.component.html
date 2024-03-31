@@ -8,10 +8,11 @@
         </a>
 
         <ul class="nav me-2 mb-2 justify-content-center mb-0 mt-1">
-          <li><a href="#" class="nav-link link-opacity-75-hover px-2 link-primary">Overview</a></li>
-          <li><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">Space</a></li>
-          <li><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">Research</a></li>
-          <li><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">News</a></li>
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">Overview</a></li>
+            <li routerLinkActive="active"><a href="#" class="nav-link link-opacity-75-hover px-2 link-light" routerLink="devices">Devices</a></li>
+            <li routerLinkActive="active"><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">Space</a></li>
+            <li routerLinkActive="active"><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">Research</a></li>
+            <li routerLinkActive="active"><a href="#" class="nav-link link-opacity-75-hover px-2 link-light">News</a></li>
         </ul>
 
         <div class="dropdown text-end mt-2">

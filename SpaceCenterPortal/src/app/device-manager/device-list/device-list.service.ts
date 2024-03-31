@@ -10,7 +10,9 @@ export class DeviceListService {
     deviceAdded = new EventEmitter<Device>();
     deviceRemoved = new EventEmitter<Device>();
     onDeletePrompt = new EventEmitter<Device>();
+    onDeviceChosen = new EventEmitter<Device>();
 
+    private selectedDevice: Device;
     private toBeRemoved: Device;
 
     addDevice(deviceName: string, deviceType: string) {
@@ -33,13 +35,23 @@ export class DeviceListService {
     private createDevice(deviceName: string, deviceType: string): Device {
         let device: Device = null;
 
-        // factory pattern
-
         switch(deviceType) {
-            case DeviceType.Rover: device = new Rover(deviceName, deviceType, null); break;
-            case DeviceType.Satellite: device = new Satellite(deviceName, deviceType, null); break;
+            case DeviceType.Rover: device = new Rover(1, deviceName, deviceType, null); break;
+            case DeviceType.Satellite: device = new Satellite(2, deviceName, deviceType, null); break;
         }
 
         return device;
+    }
+
+    deviceSelected(device: Device) {
+        this.onDeviceChosen.emit(device);
+    }
+
+    setSelectedDevice(device: Device) {
+        this.selectedDevice = device;
+    }
+
+    getSelectedDevice(): Device {
+        return this.selectedDevice;
     }
 }

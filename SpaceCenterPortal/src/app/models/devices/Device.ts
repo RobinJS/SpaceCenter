@@ -2,6 +2,7 @@ import { IDevice } from "../../interfaces/IDevice";
 import { Instrument } from "../instruments/Instrument";
 
 export class Device implements IDevice {
+    id: number;
     name: string;
     type: DeviceType;
     _instruments: Instrument[];
@@ -11,7 +12,8 @@ export class Device implements IDevice {
         return this.connected ? this._instruments : null;
     }
 
-    constructor(name: string, type: DeviceType, instruments: Instrument[]) {
+    constructor(id: number, name: string, type: DeviceType, instruments: Instrument[]) {
+        this.id = id;
         this.name = name;
         this.type = type;
         this._instruments = instruments;
