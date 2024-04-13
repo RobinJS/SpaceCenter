@@ -15,7 +15,7 @@ export class RoverControlComponent implements OnInit {
     constructor(private route: ActivatedRoute, private deviceListService: DeviceListService) {}
 
     ngOnInit() {
-        this.device = this.deviceListService.getSelectedDevice();
+        this.device = this.deviceListService.getSelectedDevice() as Rover;
     }
 
     onDeviceChoose(device: Device) {

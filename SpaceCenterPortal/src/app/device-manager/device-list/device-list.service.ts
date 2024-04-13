@@ -36,8 +36,8 @@ export class DeviceListService {
         let device: Device = null;
 
         switch(deviceType) {
-            case DeviceType.Rover: device = new Rover(1, deviceName, deviceType, null); break;
-            case DeviceType.Satellite: device = new Satellite(2, deviceName, deviceType, null); break;
+            case DeviceType.Rover: device = new Rover(1, deviceName, deviceType); break;
+            case DeviceType.Satellite: device = new Satellite(2, deviceName, deviceType); break;
         }
 
         return device;

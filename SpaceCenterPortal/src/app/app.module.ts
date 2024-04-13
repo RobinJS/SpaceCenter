@@ -14,6 +14,7 @@ import { RemoveDevicePromptComponent } from './device-manager/device-list/remove
 import { RoverControlComponent } from './controls/rover-control/rover-control.component';
 import { SatelliteControlComponent } from './controls/satellite-control/satellite-control.component';
 import { DeviceConnectingComponent } from './device-manager/device-list/device-connecting/device-connecting.component';
+import { BatteryComponent } from './controls/instruments/battery/battery.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { DeviceConnectingComponent } from './device-manager/device-list/device-c
     RoverControlComponent,
     SatelliteControlComponent,
     DeviceConnectingComponent,
+    BatteryComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,10 +1,12 @@
 import { IDevice } from "../../interfaces/IDevice";
+import { Battery } from "../instruments/Battery";
 import { Instrument } from "../instruments/Instrument";
 
 export class Device implements IDevice {
     id: number;
     name: string;
     type: DeviceType;
+    _battery: Battery;
     _instruments: Instrument[];
     private connected: boolean = false;
 
@@ -12,11 +14,16 @@ export class Device implements IDevice {
         return this.connected ? this._instruments : null;
     }
 
-    constructor(id: number, name: string, type: DeviceType, instruments: Instrument[]) {
+    public get battery(): Battery {
+        return this._battery;
+    }
+
+    constructor(id: number, name: string, type: DeviceType) {
         this.id = id;
         this.name = name;
         this.type = type;
-        this._instruments = instruments;
+
+        this._battery = new Battery();
     }
 
     connect(): void {
