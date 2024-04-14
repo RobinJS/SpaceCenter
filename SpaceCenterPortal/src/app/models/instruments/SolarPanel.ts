@@ -1,14 +1,16 @@
 import { IEnergySource } from "../../interfaces/IEnergySource";
 import { Battery } from "./Battery";
+import { EnvironmentSensors } from "./EnvironmentSensors";
 import { Instrument } from "./Instrument";
 
 export class SolarPanel extends Instrument implements IEnergySource {
-    readonly minEnergyToDeliver:number = 0.0;
-    readonly maxEnergyToDeliver:number = 2.0;
+    private readonly panelEnergyCoeficient = 2;
+    private environmentSensors: EnvironmentSensors;
 
-    constructor(battery:Battery) {
+    constructor(battery: Battery, sensors: EnvironmentSensors) {
         super(battery);
         this.consumption = 3;
+        this.environmentSensors = sensors;
     }
 
     open() {
@@ -19,8 +21,10 @@ export class SolarPanel extends Instrument implements IEnergySource {
         this._isOperational = false;
     }
 
-    getEnergy():number {
-        return +(Math.random() * (this.maxEnergyToDeliver - this.minEnergyToDeliver) + this.minEnergyToDeliver).toFixed(2);
+    getEnergy(): number {
+        let energyToDeliver = this.environmentSensors.getLightIntensity() * this.panelEnergyCoeficient;
+        this._isOperational = energyToDeliver > 0 ? true : false;
+        return energyToDeliver;
     }
 
 }

@@ -4,8 +4,8 @@ export class Battery {
     private _chargePercentage: number = 100;
     private _source: IEnergySource;
     private updateTimer;
-    isCharging:boolean = false;
-    readonly idleEnergyConsumtion:number = 0.2;
+    isCharging: boolean = false;
+    readonly idleEnergyConsumtion: number = 0.2;
     
     set source(value: IEnergySource) {
         this._source = value;
@@ -35,7 +35,7 @@ export class Battery {
         }
     }
 
-    consume(value:number):boolean {
+    consume(value: number): boolean {
         if (this._chargePercentage - value >= 0) {
             this._chargePercentage -= value;
             return true;
