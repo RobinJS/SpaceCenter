@@ -21,4 +21,9 @@ export class RoverControlComponent implements OnInit {
     onDeviceChoose(device: Device) {
         
     }
+
+    onOpenSolarPanel(event: Event) {
+        const isChecked: boolean = event.target['checked'];
+        isChecked ? this.device.solarPanel.open() : this.device.solarPanel.close();
+    }
 }

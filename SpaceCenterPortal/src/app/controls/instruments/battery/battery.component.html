@@ -1,8 +1,12 @@
 <div class="container shadow-lg p-2 user-select-none " style="background-color: #202b39">
     <h5 class="text-center">Battery status</h5>
-    <h2 class="w-100 ms-0 me-auto text-center ">{{battery.value}}%</h2>
-    <div class="progress" role="progressbar" aria-label="Battery status" [attr.aria-valuenow]="battery.value"
-         aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar bg-primary" [ngStyle]="{ width: battery.value + '%' }"></div>
+    <h2 class="w-100 ms-0 me-auto text-center ">
+        {{battery.chargePercentage}}%
+    </h2>
+    <div class="progress" role="progressbar" aria-label="Battery status"
+        [attr.aria-valuenow]="battery.chargePercentage" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar bg-success" [ngStyle]="{ width: battery.chargePercentage + '%' }"
+            [ngClass]="{'bg-danger': battery.chargePercentage <= 10, 'bg-warning': !battery.isCharging}"
+        ></div>
     </div>
 </div>
