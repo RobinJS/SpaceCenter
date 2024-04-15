@@ -1,3 +1,4 @@
 export interface IInstrument {
-    isOperational:boolean;
+    get isOperational(): boolean;
+    update(): void;
 }

@@ -23,7 +23,7 @@ export class Device implements IDevice {
         this.name = name;
         this.type = type;
 
-        this._battery = new Battery();
+        // this._battery = Battery.Instance;
     }
 
     connect(): void {

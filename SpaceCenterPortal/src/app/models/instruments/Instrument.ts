@@ -1,9 +1,10 @@
+import { IInstrument } from "../../interfaces/IInstrument";
 import { Battery } from "./Battery";
 
-export class Instrument {
+export class Instrument implements IInstrument {
     protected _isOperational: boolean = true;
     protected consumption: number;
-    private battery: Battery;
+    protected battery: Battery;
 
     get isOperational(): boolean {
         return this._isOperational;
@@ -11,5 +12,9 @@ export class Instrument {
 
     constructor(battery: Battery) {
         this.battery = battery;
+    }
+
+    update(): void {
+        
     }
 }

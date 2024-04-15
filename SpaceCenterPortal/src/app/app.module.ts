@@ -15,6 +15,7 @@ import { RoverControlComponent } from './controls/rover-control/rover-control.co
 import { SatelliteControlComponent } from './controls/satellite-control/satellite-control.component';
 import { DeviceConnectingComponent } from './device-manager/device-list/device-connecting/device-connecting.component';
 import { BatteryComponent } from './controls/instruments/battery/battery.component';
+import { EnvironmentSensorsComponent } from './controls/instruments/environment-sensors/environment-sensors.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BatteryComponent } from './controls/instruments/battery/battery.compone
     SatelliteControlComponent,
     DeviceConnectingComponent,
     BatteryComponent,
+    EnvironmentSensorsComponent,
   ],
   imports: [
     BrowserModule,

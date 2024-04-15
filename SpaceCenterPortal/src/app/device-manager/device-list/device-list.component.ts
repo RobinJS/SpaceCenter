@@ -10,8 +10,8 @@ import { DeviceListService } from './device-list.service';
 })
 export class DeviceListComponent implements OnInit {
     devices: Device[] = [
-        new Rover(1, "Curiosity", DeviceType.Rover),
-        new Rover(2, "Sat TV", DeviceType.Satellite)
+        new Rover(1, "Curiosity", DeviceType.Rover)/*,
+        new Rover(2, "Sat TV", DeviceType.Satellite)*/
     ];
 
     constructor(private deviceListService: DeviceListService) {}

@@ -6,11 +6,13 @@ import { Instrument } from "./Instrument";
 export class SolarPanel extends Instrument implements IEnergySource {
     private readonly panelEnergyCoeficient = 2;
     private environmentSensors: EnvironmentSensors;
+    private energyToDeliver: number;
 
     constructor(battery: Battery, sensors: EnvironmentSensors) {
         super(battery);
         this.consumption = 3;
         this.environmentSensors = sensors;
+        this.update();
     }
 
     open() {
@@ -22,9 +24,11 @@ export class SolarPanel extends Instrument implements IEnergySource {
     }
 
     getEnergy(): number {
-        let energyToDeliver = this.environmentSensors.getLightIntensity() * this.panelEnergyCoeficient;
-        this._isOperational = energyToDeliver > 0 ? true : false;
-        return energyToDeliver;
+        return this.energyToDeliver;
+    }
+    
+    update() {
+        this.energyToDeliver = this.environmentSensors.getLightIntensity() * this.panelEnergyCoeficient;
     }
 
 }

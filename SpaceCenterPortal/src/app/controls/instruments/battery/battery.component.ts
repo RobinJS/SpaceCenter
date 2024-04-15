@@ -10,8 +10,6 @@ import { Battery } from '../../../models/instruments/Battery';
 export class BatteryComponent implements OnInit {
     battery:Battery;
 
-    // show charging/discharging
-
     constructor(private deviceListService: DeviceListService) {}
 
     ngOnInit(): void {

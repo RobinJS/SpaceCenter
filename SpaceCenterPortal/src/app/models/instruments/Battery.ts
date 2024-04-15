@@ -3,8 +3,7 @@ import { IEnergySource } from "../../interfaces/IEnergySource";
 export class Battery {
     private _chargePercentage: number = 100;
     private _source: IEnergySource;
-    private updateTimer;
-    isCharging: boolean = false;
+    isCharging: boolean = true;
     readonly idleEnergyConsumtion: number = 0.2;
     
     set source(value: IEnergySource) {
@@ -15,23 +14,26 @@ export class Battery {
         return this._chargePercentage;
     }
     
-    constructor() {
-        this.startDischarging();
-    }
-    
-    private startDischarging() {
-        this.updateTimer = setInterval(() => this.update(), 1000);
+    private static _instance: Battery;
+    static get Instance() {
+        return this._instance || (this._instance = new this());
     }
 
-    private update() {
-        this.isCharging = false;
+    private constructor() {
         
-        if (this._chargePercentage > 0) this._chargePercentage = +(this._chargePercentage - this.idleEnergyConsumtion).toFixed(2);
-        
+    }
+
+    update() {
+        if (this._source == null || !this._source.isOperational || this._source.getEnergy() == 0) this.isCharging = false;
+        else this.isCharging = true;
+
         if (this._source != null && this._source.isOperational && this._chargePercentage < 100) {
-            let newValue = +(this._chargePercentage + this._source.getEnergy()).toFixed(2);
-            this._chargePercentage = Math.min(newValue, 100);
-            this.isCharging = true;
+            let chargeValue = this._source.getEnergy();
+
+            if (chargeValue > 0) {
+                let newValue = +(this._chargePercentage + chargeValue).toFixed(2);
+                this._chargePercentage = Math.min(newValue, 100);
+            }
         }
     }
 
