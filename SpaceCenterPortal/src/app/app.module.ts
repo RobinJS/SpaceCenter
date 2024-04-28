@@ -16,6 +16,7 @@ import { SatelliteControlComponent } from './controls/satellite-control/satellit
 import { DeviceConnectingComponent } from './device-manager/device-list/device-connecting/device-connecting.component';
 import { BatteryComponent } from './controls/instruments/battery/battery.component';
 import { EnvironmentSensorsComponent } from './controls/instruments/environment-sensors/environment-sensors.component';
+import { LogComponent } from './controls/instruments/log/log.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { EnvironmentSensorsComponent } from './controls/instruments/environment-
     DeviceConnectingComponent,
     BatteryComponent,
     EnvironmentSensorsComponent,
+    LogComponent,
   ],
   imports: [
     BrowserModule,

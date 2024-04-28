@@ -15,9 +15,9 @@ export class Rover extends Device implements IDevice {
     constructor(id: number, name: string, type: DeviceType) {
         super(id, name, type);
         
+        this._battery = Battery.Instance;
         this.environmentSensors = new EnvironmentSensors(this._battery);
         this.solarPanel = new SolarPanel(this._battery, this.environmentSensors);
-        this._battery = Battery.Instance;
         this._battery.source = this.solarPanel;
         this.communicationsModule = new CommunicationModule(this._battery);
 
@@ -31,8 +31,8 @@ export class Rover extends Device implements IDevice {
     }
 
     updateInstruments() {
-        this._battery.update();
         this.environmentSensors.update();
         this.solarPanel.update();
+        this._battery.update();
     }
 }

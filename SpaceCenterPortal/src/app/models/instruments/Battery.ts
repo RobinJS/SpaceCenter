@@ -1,4 +1,5 @@
 import { IEnergySource } from "../../interfaces/IEnergySource";
+import { formatValue } from "../../utils/Utils";
 
 export class Battery {
     private _chargePercentage: number = 100;
@@ -31,19 +32,23 @@ export class Battery {
             let chargeValue = this._source.getEnergy();
 
             if (chargeValue > 0) {
-                let newValue = +(this._chargePercentage + chargeValue).toFixed(2);
-                this._chargePercentage = Math.min(newValue, 100);
+                let newValue = formatValue(this._chargePercentage + chargeValue);
+                this._chargePercentage = +Math.min(newValue, 100).toFixed(2);
             }
         }
     }
 
     consume(value: number): boolean {
         if (this._chargePercentage - value >= 0) {
-            this._chargePercentage -= value;
+            this._chargePercentage = formatValue(this._chargePercentage - value);
             return true;
         }
 
         return false;
     }
+
+    // formatValue(value: number): number {
+    //     return +value.toFixed(2);
+    // }
 }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Device, DeviceType } from '../../models/devices/Device';
 import { Rover } from '../../models/devices/Rover';
 import { DeviceListService } from './device-list.service';
+import { Satellite } from '../../models/devices/Satellite';
 
 @Component({
   selector: 'app-device-list',
@@ -10,8 +11,8 @@ import { DeviceListService } from './device-list.service';
 })
 export class DeviceListComponent implements OnInit {
     devices: Device[] = [
-        new Rover(1, "Curiosity", DeviceType.Rover)/*,
-        new Rover(2, "Sat TV", DeviceType.Satellite)*/
+        new Rover(1, "Curiosity", DeviceType.Rover),
+        new Satellite(2, "Sat TV", DeviceType.Satellite)
     ];
 
     constructor(private deviceListService: DeviceListService) {}

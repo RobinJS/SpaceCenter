@@ -1,0 +1,7 @@
+<div class="container shadow-lg p-2 user-select-none m-2 mt-0 mb-3" style="background-color: #202b39">
+    <h5 class="text-center underline">Log</h5>
+    <hr class="mt-0">
+    <ul class="list-group overflow-auto" style="height: 15rem;" data-bs-spy="scroll" data-bs-target="#navbar-example2">
+        <li *ngFor="let item of messageList" class="{{item.styleClasses}}">{{ item.message }}</li>
+    </ul>
+</div>
