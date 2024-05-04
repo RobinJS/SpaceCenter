@@ -1,17 +1,21 @@
-<h1>{{device.name}}</h1>
+
+<h1>
+    <div class="bg-white d-inline-block align-bottom" style="width: 42px; height: 42px; border-radius: 10px;">
+        <img src="{{iconPath}}" alt="{{ device.type }}" width="32" height="32" class="align-baseline" style="margin: 5px;">
+    </div>
+    {{device.name}}
+</h1>
 <hr>
 <div class="row">
     <div class="col">
         <div class="list-group">
+            <!-- To do: control item -->
             <li class="list-group-item list-group-item-action form-check-reverse">
-                <!-- <div class="form-check form-switch">
-                    <label class="form-check-label" for="flexSwitchCheckChecked">Solar Panel Open</label>
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-                </div> -->
                 <div class="form-check form-switch form-check-reverse fs-5 user-select-none ">
+                    <img src="../assets/images/icons/icons8-solar-panel-48.png" alt="solar-panel" width="32" height="32" class="float-start" style="margin-right: 15px;">
                     <label class="form-check-label float-start" for="flexSwitchCheckReverse">Open Solar Panel</label>
                     <input class="form-check-input float-end" type="checkbox" id="flexSwitchCheckReverse" checked (change)="onOpenSolarPanel($event)">
-                  </div>
+                </div>
             </li>
         </div>
     </div>

@@ -33,6 +33,7 @@ export class Rover extends Device implements IDevice {
     updateInstruments() {
         this.environmentSensors.update();
         this.solarPanel.update();
+        this.communicationsModule.update();
         this._battery.update();
     }
 }

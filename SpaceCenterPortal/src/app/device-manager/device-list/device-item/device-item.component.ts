@@ -14,10 +14,7 @@ export class DeviceItemComponent implements OnInit {
     constructor(private deviceListService: DeviceListService) {}
 
     ngOnInit() {
-        switch (this.device.type) {
-            case DeviceType.Rover: this.iconPath += "icons8-space-rover-48.png"; break;
-            case DeviceType.Satellite: this.iconPath += "icons8-satelite-99.png"; break;
-        }
+        this.setTitleIcon();
     }
 
     onRemoveDeviceBtn() {
@@ -34,5 +31,12 @@ export class DeviceItemComponent implements OnInit {
 
     onDeviceClick() {
         this.deviceListService.setSelectedDevice(this.device);
+    }
+
+    private setTitleIcon() {
+        switch (this.device.type) {
+            case DeviceType.Rover: this.iconPath += "icons8-space-rover-48.png"; break;
+            case DeviceType.Satellite: this.iconPath += "icons8-satelite-99.png"; break;
+        }
     }
 }
