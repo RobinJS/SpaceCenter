@@ -1,0 +1,4 @@
+ul.list-group.overflow-auto.d-flex.flex-column-reverse li:first-child::before {
+    color: #13c5cf;
+    content: "new ";
+}

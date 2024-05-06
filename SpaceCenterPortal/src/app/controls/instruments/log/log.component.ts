@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../../../common/message/message.service';
 
 @Component({
@@ -6,14 +6,27 @@ import { MessageService } from '../../../common/message/message.service';
   templateUrl: './log.component.html',
   styleUrl: './log.component.css'
 })
-export class LogComponent {
+export class LogComponent implements OnInit {
     messageList: MessageItem[] = [];
+    // private messageService;
 
     constructor(messageService: MessageService) {
-        messageService.onLogMessage.subscribe(this.logMessage);
+        // this.messageService = messageService;
+        messageService.onLogMessage.subscribe((message: Message)=>{
+            this.logMessage(message);
+        });
+    }
+
+    ngOnInit(): void {
+        // this.messageService.onLogMessage.subscribe(this.logMessage);
+        // this.messageService.onLogMessage.subscribe((message: Message)=>{
+        //     this.logMessage(message);
+        // });
     }
 
     private logMessage(message: Message) {
+        let dateTime = new Date().toLocaleString();
+        message.text += ` ${dateTime}`;
         switch(message.type) {
             case MessageType.Warning: { this.logWarning(message); break; }
             case MessageType.Alert: { this.logAlert(message); break; }

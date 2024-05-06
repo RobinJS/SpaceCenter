@@ -1,11 +1,15 @@
+import { EventEmitter } from "@angular/core";
 import { IEnergySource } from "../../interfaces/IEnergySource";
 import { formatValue } from "../../utils/Utils";
+import { Message, MessageType } from "../../controls/instruments/log/log.component";
 
 export class Battery {
     private _chargePercentage: number = 100;
     private _source: IEnergySource;
     isCharging: boolean = true;
+    private batterWarningShown = false;
     readonly idleEnergyConsumtion: number = 0.2;
+    onLogMessage = new EventEmitter<Message>();
     
     set source(value: IEnergySource) {
         this._source = value;
@@ -20,9 +24,7 @@ export class Battery {
         return this._instance || (this._instance = new this());
     }
 
-    private constructor() {
-        
-    }
+    private constructor() {}
 
     update() {
         if (this._source == null || !this._source.isOperational || this._source.getEnergy() == 0) this.isCharging = false;
@@ -35,6 +37,16 @@ export class Battery {
                 let newValue = formatValue(this._chargePercentage + chargeValue);
                 this._chargePercentage = +Math.min(newValue, 100).toFixed(2);
             }
+        }
+
+        if (!this.isCharging && !this.batterWarningShown) {
+            this.batterWarningShown = true;
+            this.onLogMessage.emit({text: "Warning! Battery not charging!", type: MessageType.Warning});
+        }
+
+        if (this.isCharging && this.batterWarningShown) {
+            this.batterWarningShown = false;
+            this.onLogMessage.emit({text: "Battery charging restored.", type: MessageType.Default});
         }
     }
 

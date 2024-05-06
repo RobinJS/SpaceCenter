@@ -2,6 +2,7 @@ import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { DeviceListService } from '../../../device-manager/device-list/device-list.service';
 import { Battery } from '../../../models/instruments/Battery';
 import { MessageService } from '../../../common/message/message.service';
+import { Message } from '../log/log.component';
 
 @Component({
   selector: 'app-battery',
@@ -11,13 +12,14 @@ import { MessageService } from '../../../common/message/message.service';
 export class BatteryComponent implements OnInit {
     battery:Battery;
 
-    constructor(private deviceListService: DeviceListService, private messageService: MessageService) {}
-
-    ngOnInit(): void {
+    constructor(private deviceListService: DeviceListService, private messageService: MessageService) {
         this.battery = this.deviceListService.getSelectedDevice().battery;
+        this.battery.onLogMessage.subscribe((message: Message)=>{
+            messageService.newMessage(message);
+        });
+
     }
 
-    ngOnChanges(changes: SimpleChanges): void {
-        if (!this.battery.isCharging) this.messageService.alert("Warning! Battery not charging!");
+    ngOnInit(): void {
     }
 }
