@@ -8,7 +8,10 @@ export class Battery {
     private _source: IEnergySource;
     isCharging: boolean = true;
     private batterWarningShown = false;
-    readonly idleEnergyConsumtion: number = 0.2;
+    private lowBatteryWarningShown = false;
+
+    readonly LOW_BATTERY_TRESHOLD: number = 95;
+
     onLogMessage = new EventEmitter<Message>();
     
     set source(value: IEnergySource) {
@@ -39,14 +42,27 @@ export class Battery {
             }
         }
 
+        this.handleWarnings();
+    }
+    
+    handleWarnings() {
         if (!this.isCharging && !this.batterWarningShown) {
             this.batterWarningShown = true;
             this.onLogMessage.emit({text: "Warning! Battery not charging!", type: MessageType.Warning});
         }
-
+    
         if (this.isCharging && this.batterWarningShown) {
             this.batterWarningShown = false;
             this.onLogMessage.emit({text: "Battery charging restored.", type: MessageType.Default});
+        }
+
+        if (!this.isCharging && !this.lowBatteryWarningShown && this.chargePercentage <= this.LOW_BATTERY_TRESHOLD) {
+            this.lowBatteryWarningShown = true;
+            this.onLogMessage.emit({text: "Warning! Battery level low!", type: MessageType.Alert});
+        }
+
+        if (this.isCharging && this.lowBatteryWarningShown && this.chargePercentage > this.LOW_BATTERY_TRESHOLD) {
+            this.lowBatteryWarningShown = false;
         }
     }
 
