@@ -2,6 +2,11 @@
     <h5 class="text-center under">Environment</h5>
     <hr class="mt-0">
     <p class="w-100 ms-0 me-auto text-center ">Illumination: {{environmentSensors.illumination}}</p>
-    <p class="w-100 ms-0 me-auto text-center ">Temperature: {{environmentSensors.temperature}}°C</p>
+    <p class="w-100 ms-0 me-auto text-center ">
+        Temperature 
+        <span style="color: #00bfff">min {{environmentSensors.minOperationalTemp}} </span>
+        <span style="color: red">max {{environmentSensors.maxOperationalTemp}} </span>
+        current: {{environmentSensors.temperature}}°C
+    </p>
     <p class="w-100 ms-0 me-auto text-center ">Wind: {{environmentSensors.wind}}m/s</p>
 </div>
